@@ -1,85 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Insta-Sohor</title>
-        <link rel="stylesheet" href="./css/style.css" />
-        <!-- Latest compiled and minified CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta-Sohor</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-        <!-- google Montserrat  font  -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
+    <!-- google Montserrat  font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-                <a class="navbar-brand" href="#">Insta-Sohor</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+        <a class="navbar-brand" href="#">Insta-Sohor</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div
-                    class="collapse navbar-collapse justify-content-end"
-                    id="navbarSupportedContent"
-                >
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-link active" role="button" onclick="switchTab( 'posts' )">
-                            <i class="fa-solid fa-house"></i>
-                        </li>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'posts' )"
+            >
+              <i class="fa-solid fa-house"></i>
+            </li>
 
-                        <li class="nav-link active" role="button" onclick="switchTab( 'liked' )">
-                            <i class="fa-solid fa-heart text-danger"></i>
-                        </li>
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'liked' )"
+            >
+              <i class="fa-solid fa-heart text-danger"></i>
+            </li>
 
-                        <li class="nav-link active" role="button" onclick="switchTab( 'reported' )">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main class="main container mx-auto p-3">
-            <div id="posts">
-            </div>
-            <div id="liked">
-                <h1>Liked posts</h1>
-            </div>
+            <li
+              class="nav-link active"
+              role="button"
+              onclick="switchTab( 'reported' )"
+            >
+              <i class="fa-solid fa-eye-slash"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main container mx-auto p-3">
+      <div id="posts"></div>
+      <div id="liked">
+        <h1>Liked posts</h1>
+      </div>
 
-            <div id="reported">
-                <h1>Reported posts</h1>
-            </div>
-        </main>
-        <footer></footer>
+      <div id="reported">
+        <h1>Reported posts</h1>
+      </div>
+    </main>
+    <section>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col border shadow-lg p-3 m-5 bg-body rounded">
+            <h2>How does JS work ?</h2>
+            <p>
+              One of the most effective and widely used scripting languages is
+              JavaScript, a client-side language. The phrase "client-side
+              scripting language" refers to the fact that it executes
+              client-side (or on the client machine) within web browsers. A
+              Document Object Model (DOM) is made from the contents of a web
+              page by the web browser after it has loaded it, parsed the HTML,
+              and rendered the page. The DOM presents a live view of the web
+              page to your JavaScript code. The browser will then download all
+              files that are connected to the HTML, including CSS and image
+              files. The CSS parser is where the CSS data is found. The DOM
+              first assembles the HTML and CSS to build the web page. The
+              JavaScript engine of the browsers then loads JavaScript files and
+              inline code but does not instantly execute the code. It holds off
+              until the HTML and CSS have fully loaded.The order here is
+              important. If the JavaScript did not wait for the HTML and CSS to
+              finish, it would not be able to change the DOM elements.
+            </p>
+          </div>
 
-        <!-- add javascript  file  -->
-        <script src="./js/app.js"></script>
-    </body>
+          <div class="col border shadow-lg p-3 m-5 bg-body rounded">
+            <h2>Local storage and Session Storage Difference ?</h2>
+            <p>
+              Across browser sessions, local storage preserves the storage.
+              Thus, the storage is kept even if the browser is closed and then
+              opened again or the website is reopened in a new tab. There is no
+              time limit.
+              <br />
+              When the page session is over, the session storage is deleted. As
+              long as the tab or the browser is open, a page session is active.
+              As a result, whenever you open a new tab or window, a new session
+              and new storage are created.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer></footer>
+
+    <!-- add javascript  file  -->
+    <script src="./js/app.js"></script>
+  </body>
 </html>
